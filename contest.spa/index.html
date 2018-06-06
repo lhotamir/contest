@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Soutěž</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        function doAjax() {
+            $.ajax(
+                {
+                    type: 'GET',
+                    url: 'http://localhost:5000/current',
+                    success: function (data) {
+                        $('#question').text(data.question);
+                        var list = $('<ul></ul>')
+                        $('#answers').empty()
+                        $.each(data.answers, function (i) {
+                            var li = $('<li></li>')
+                                .text(data.answers[i].answer)
+                                .appendTo(list);
+                        });
+                        $('#answers').append(list)
+                    }/*,
+                    complete: function (data) {
+                        setTimeout(doAjax, 1000);
+                    }*/
+                }
+            );
+            $.ajax(
+                {
+                    type: 'GET',
+                    url: 'http://localhost:5000/score',
+                    success: function (data) {
+                        $('#score').text("Skóre: "+data.score)
+                    },
+                    complete: function (data) {
+                        setTimeout(doAjax, 1000);
+                    }
+                }
+            )
+        }
+        setTimeout(doAjax, 1000);
+    </script>
+</head>
+
+<body>
+    <h1 id="score">Skóre: 0</h1>
+    <h2 id="question"></h2>
+    <div id="answers">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+[
+  {
+    "question": "Co to je?",
+    "answers": [
+      { "answer": "aaa", "points": 40 },
+      { "answer": "bbb", "points": 30 },
+      { "answer": "ccc", "points": 20 },
+      { "answer": "ddd", "points": 10 },
+      { "answer": "eee", "points": 5 }
+    ]
+  },
+  {
+    "question": "Co to není?",
+    "answers": [
+      { "answer": "aaa", "points": 40 },
+      { "answer": "bbb", "points": 30 },
+      { "answer": "ccc", "points": 20 },
+      { "answer": "ddd", "points": 10 },
+      { "answer": "eee", "points": 5 }
+    ]
+  },
+  {
+    "question": "Kdo to je?",
+    "answers": [
+      { "answer": "aaa", "points": 40 },
+      { "answer": "bbb", "points": 30 }
+    ]
+  }
+]
