@@ -1,14 +1,23 @@
 from flask import Flask, Response
 from flask import json
-from flask import request
+from flask import request, send_from_directory
+from flask_cors import CORS
+import logging
 import contest
-
-app = Flask(__name__)
+logging.getLogger('flask_cors').level = logging.DEBUG
+app = Flask(__name__, static_url_path='/client', static_folder="../contest.spa")
+cors = CORS(app)
 app.config['JSON_AS_ASCII'] = False
+app.config['CORS_AUTOMATIC_OPTIONS'] = True
 contest_state = contest.Contest()
 
 def build_response(data=None, status=200):
-    return Response(response=json.dumps(data).encode("utf-8"), status=status, content_type="application/json; charset=utf-8", headers={"Access-Control-Allow-Origin": "*"})
+    return Response(response=json.dumps(data).encode("utf-8"), status=status, content_type="application/json; charset=utf-8")
+
+#@app.route('/client/<path:path>')
+#def static_path(path):
+#    return send_from_directory( path)
+
 
 @app.route("/current")
 def get_current():
@@ -26,6 +35,10 @@ def get_strikes():
 def add_strike():
     contest_state.strikes += 1
     return build_response(status=204)
+
+@app.route("/strikes", methods=["OPTIONS"])
+def options_strike():
+    return build_response(status=200)
 
 @app.route("/set/<question_id>", methods=["PUT"])
 def set_current(question_id):
@@ -60,7 +73,7 @@ def reveal_answer(answer_num):
     return build_response(status=204)
 
 
-@app.route("/question/<question_id>")
+@app.route("/questions/<question_id>")
 def get_question(question_id):
     try:
         return build_response(data=contest_state.questions[int(question_id)])
@@ -69,6 +82,9 @@ def get_question(question_id):
     except ValueError:
         return build_response(data={"error":"Wrong index"}, status=400)
 
+@app.route("/questions")
+def get_questions():
+    return build_response(data=contest_state.questions)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
