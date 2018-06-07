@@ -36,19 +36,19 @@ def add_strike():
     contest_state.strikes += 1
     return build_response(status=204)
 
-@app.route("/strikes", methods=["OPTIONS"])
-def options_strike():
-    return build_response(status=200)
-
 @app.route("/set/<question_id>", methods=["PUT"])
 def set_current(question_id):
+    if request.args.get('final') == 'true':
+        final = True
+    else:
+        final = False
     try:
         if int(question_id) == -1:
             contest_state.current_question["question"] = ""
             contest_state.current_question["answers"] = []
-        else:
-            contest_state.set_current_question(int(question_id))
             contest_state.strikes = 0
+        else:
+            contest_state.set_current_question(int(question_id), final)
     except IndexError:
         return build_response(data={"error":"No such question present"}, status=404)
     except ValueError:
@@ -63,8 +63,11 @@ def get_score():
 @app.route("/reveal/<answer_num>", methods=["PUT"])
 def reveal_answer(answer_num):
     try:
-        contest_state.reveal_answer(int(answer_num))
-        if "count_score" in request.args:
+        if request.args.get("final") == 'true':
+            contest_state.final_reveal(int(answer_num))
+        else:
+            contest_state.reveal_answer(int(answer_num))
+        if request.args.get("count_score") == 'true' or request.args("final").get =='true':
             contest_state.score += contest_state.get_current_question()["answers"][int(answer_num)]["points"]
     except IndexError:
        return build_response(data={"error":"Answer not found"}, status=404)
@@ -82,9 +85,33 @@ def get_question(question_id):
     except ValueError:
         return build_response(data={"error":"Wrong index"}, status=400)
 
+@app.route("/final_questions/<question_id>")
+def get_final_question(question_id):
+    try:
+        return build_response(data=contest_state.final_questions[int(question_id)])
+    except IndexError:
+        return build_response(data={"error":"No such question present"}, status=404)
+    except ValueError:
+        return build_response(data={"error":"Wrong index"}, status=400)
+
+@app.route("/final_questions/<question_id>/answers", methods=["POST"])
+def add_final_question_answer(question_id):
+    try:
+        data = request.get_json()
+        contest_state.final_questions[int(question_id)]["answers"].append({"answer":data["answer"], "points":0})
+        return build_response(data=contest_state.final_questions[int(question_id)])
+    except IndexError:
+        return build_response(data={"error":"No such question present"}, status=404)
+    except ValueError:
+        return build_response(data={"error":"Wrong index"}, status=400)
+
 @app.route("/questions")
 def get_questions():
     return build_response(data=contest_state.questions)
+
+@app.route("/final_questions")
+def get_final_questions():
+    return build_response(data=contest_state.final_questions)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

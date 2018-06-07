@@ -1,29 +1,119 @@
-[
-  {
-    "question": "Co to je?",
-    "answers": [
-      { "answer": "aaa", "points": 40 },
-      { "answer": "bbb", "points": 30 },
-      { "answer": "ccc", "points": 20 },
-      { "answer": "ddd", "points": 10 },
-      { "answer": "eee", "points": 5 }
-    ]
-  },
-  {
-    "question": "Co to není?",
-    "answers": [
-      { "answer": "aaa", "points": 40 },
-      { "answer": "bbb", "points": 30 },
-      { "answer": "ccc", "points": 20 },
-      { "answer": "ddd", "points": 10 },
-      { "answer": "eee", "points": 5 }
-    ]
-  },
-  {
-    "question": "Kdo to je?",
-    "answers": [
-      { "answer": "aaa", "points": 40 },
-      { "answer": "bbb", "points": 30 }
-    ]
-  }
-]
+{
+  "questions": [
+    {
+      "question": "Co to je?",
+      "answers": [
+        {
+          "answer": "aaa",
+          "points": 40
+        },
+        {
+          "answer": "bbb",
+          "points": 30
+        },
+        {
+          "answer": "ccc",
+          "points": 20
+        },
+        {
+          "answer": "ddd",
+          "points": 10
+        },
+        {
+          "answer": "eee",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "question": "Co to není?",
+      "answers": [
+        {
+          "answer": "aaa",
+          "points": 40
+        },
+        {
+          "answer": "bbb",
+          "points": 30
+        },
+        {
+          "answer": "ccc",
+          "points": 20
+        },
+        {
+          "answer": "ddd",
+          "points": 10
+        },
+        {
+          "answer": "eee",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "question": "Kdo to je?",
+      "answers": [
+        {
+          "answer": "aaa",
+          "points": 40
+        },
+        {
+          "answer": "bbb",
+          "points": 30
+        }
+      ]
+    }
+  ],
+  "final_questions": [
+    {
+      "question": "Finále 1",
+      "answers": [
+        {
+          "answer": "faaa",
+          "points": 40
+        },
+        {
+          "answer": "fbbb",
+          "points": 30
+        },
+        {
+          "answer": "fccc",
+          "points": 20
+        },
+        {
+          "answer": "fddd",
+          "points": 10
+        },
+        {
+          "answer": "feee",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "question": "Finále 2",
+      "answers": [
+        {
+          "answer": "f2aaa",
+          "points": 40
+        },
+        {
+          "answer": "f2bbb",
+          "points": 30
+        },
+        {
+          "answer": "f2ccc",
+          "points": 20
+        },
+        {
+          "answer": "f2ddd",
+          "points": 10
+        },
+        {
+          "answer": "f2eee",
+          "points": 5
+        }
+      ]
+    }
+  ]
+}

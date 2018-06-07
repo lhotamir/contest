@@ -3,9 +3,6 @@ function doAjax() {
         {
             type: 'GET',
             url: 'http://localhost:5000/current',
-            headers: {
-                "Connection":"close"
-            },
             success: function (data) {
                 $('#question').text(data.question);
                 var list = $('<ul></ul>')
@@ -23,9 +20,6 @@ function doAjax() {
         {
             type: 'GET',
             url: 'http://localhost:5000/score',
-            headers: {
-                "Connection":"close"
-            },
             success: function (data) {
                 $('#score').text("Skóre: "+data.score)
             }
@@ -35,9 +29,6 @@ function doAjax() {
         {
             type: 'GET',
             url: 'http://localhost:5000/strikes',
-            headers: {
-                "Connection":"close"
-            },
             success: function (data) {
                 var strikes_div = $('#strikes');
                 strikes_div.empty()
