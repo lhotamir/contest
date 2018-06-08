@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #1D518E;
+	font-family: Helvetica, Arial, "sans-serif";
+}
+
+#score {
+	background-color: #FFFFFF;
+	border-color: #1890D4;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	width: 200px;
+	padding: 20px;
+	border-radius: 25px;
+
+	font-size: 120pt;
+	text-align: center;
+	letter-spacing: 5px;
+	color: #000000;
+}
+
+#question {
+	background-color: rgba(255,255,255,0.80);
+	border-color: #1890D4;
+	border-style: solid;
+	border-width: 1px;
+	width: 1000px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 15px;
+	
+	font-size: 28pt;
+}
+
+#answers li {
+	background-color:  rgba(255,255,255,1);
+	width: 600px;
+	height: 45px;
+	border-color: #1890D4;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 15px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 20px;
+	
+	font-size: 28pt;
+	list-style-type: none;
+}
+
+#answers li span {
+	padding-left: 25px;
+	margin-top: -4px;
+	color: #1890D4;
+	float: right;
+	font-size: 36pt;
+	
+}
