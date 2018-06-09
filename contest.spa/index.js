@@ -34,11 +34,15 @@ function doAjax() {
             url: 'http://localhost:5000/strikes',
             success: function (data) {
                 var strikes_div = $('#strikes');
+                var strikes_length = $('#strikes > p').text().length;
                 strikes_div.empty();
                 var strikes_p = $('<p></p>');
                 var s = '';
                 for (let i = 0; i < data.strikes; i++) {
                     s += 'X ';
+                }
+                if (s.length > strikes_length) {
+                    document.getElementById("strike-sound").play();
                 }
                 strikes_p.text(s);
                 strikes_p.appendTo(strikes_div);
