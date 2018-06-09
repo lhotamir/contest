@@ -26,6 +26,16 @@ class Contest(object):
                 "" for _ in self.questions[question_index]["answers"]]
         return
 
+    def reset(self):
+        with open("contest.api/questions.json", encoding='utf-8') as f:
+            data = json.load(f)
+            self.questions = data["questions"]
+            self.final_questions = data["final_questions"]
+        self.current_question = {"question": "",
+                                 "answers": []}
+        self.score = 0
+        self.strikes = 0
+
     def get_current_question(self):
         return self.questions[self.current_question_idx]
 
@@ -43,3 +53,4 @@ class Contest(object):
     def final_reveal(self, answer_num):
         self.current_question["answers"].append(
             self.final_questions[self.current_question_idx]["answers"][answer_num])
+        self.score += self.final_questions[self.current_question_idx]["answers"][answer_num]["points"]

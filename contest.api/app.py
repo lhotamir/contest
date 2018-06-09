@@ -16,19 +16,15 @@ contest_state = contest.Contest()
 def build_response(data=None, status=200):
     return Response(response=json.dumps(data).encode("utf-8"), status=status, content_type="application/json; charset=utf-8")
 
-# @app.route('/client/<path:path>')
-# def static_path(path):
-#    return send_from_directory( path)
-
-
 @app.route("/current")
 def get_current():
     return build_response(contest_state.current_question)
 
 
-@app.route("/reset")
+@app.route("/reset", methods=["PUT"])
 def reset():
-    contest_state = contest.Contest()
+    contest_state.reset()
+    return build_response(status=204)
 
 
 @app.route("/strikes", methods=["GET"])
@@ -78,8 +74,6 @@ def reveal_answer(answer_num):
             contest_state.final_reveal(int(answer_num))
         else:
             contest_state.reveal_answer(int(answer_num), count_score)
-        # if request.args.get("count_score") == 'true' or request.args("final").get =='true':
-        #    contest_state.score += contest_state.get_current_question()["answers"][int(answer_num)]["points"]
     except IndexError:
         return build_response(data={"error": "Answer not found"}, status=404)
     except ValueError:
@@ -112,7 +106,7 @@ def add_final_question_answer(question_id):
     try:
         data = request.get_json()
         contest_state.final_questions[int(question_id)]["answers"].append(
-            {"answer": data["answer"], "points": 0})
+            {"answer": data["answer"], "points": data["points"]})
         return build_response(data=contest_state.final_questions[int(question_id)])
     except IndexError:
         return build_response(data={"error": "No such question present"}, status=404)

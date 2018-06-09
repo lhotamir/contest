@@ -5,6 +5,16 @@ function addStrike() {
   });
 }
 
+function reset() {
+  $.ajax({
+    type: 'PUT',
+    url: 'http://localhost:5000/reset',
+    success: function (data) {
+      location.reload(true);
+    }
+  });
+}
+
 function loadQuestions() {
   $.ajax({
     type: 'GET',
@@ -114,10 +124,14 @@ function setQuestion(question_idx, final = false) {
       if (final) {
         var input_li = $('<li></li>');
         input_li.text('Nová odpověď: ');
-        var input = $('<input></input>');
-        input.attr('id', 'new_answer');
-        input.attr('type', 'text');
-        input.appendTo(input_li);
+        var input_answer = $('<input></input>');
+        input_answer.attr('id', 'new_answer');
+        input_answer.attr('type', 'text');
+        input_answer.appendTo(input_li);
+        var input_points = $('<input></input>');
+        input_points.attr('id', 'new_points');
+        input_points.attr('type', 'text');
+        input_points.appendTo(input_li);
         var answer_button = $('<button>Přidej odpověď</button>');
         answer_button.attr('onclick', 'addAnswer(' + question_idx + ')');
         answer_button.appendTo(input_li);
@@ -129,13 +143,14 @@ function setQuestion(question_idx, final = false) {
 
 function addAnswer(question_idx) {
   var new_answer = $('#new_answer').val();
+  var new_points = $('#new_points').val();
   if (new_answer != '') {
     $.ajax({
       type: 'POST',
       url: 'http://localhost:5000/final_questions/' + question_idx + '/answers',
       contentType: 'application/json; charset=utf-8',
       dataType: 'json',
-      data: JSON.stringify({ answer: new_answer }),
+      data: JSON.stringify({ answer: new_answer, points: parseInt(new_points) }),
       success: function(data) {
         var displayed_answers = $('[id$=questions] > ul > li > ul');
         $.each(displayed_answers, function(i) {
@@ -155,10 +170,14 @@ function addAnswer(question_idx) {
         question.append(list);
         var input_li = $('<li></li>');
         input_li.text('Nová odpověď: ');
-        var input = $('<input></input>');
-        input.attr('id', 'new_answer');
-        input.attr('type', 'text');
-        input.appendTo(input_li);
+        var input_answer = $('<input></input>');
+        input_answer.attr('id', 'new_answer');
+        input_answer.attr('type', 'text');
+        input_answer.appendTo(input_li);
+        var input_points = $('<input></input>');
+        input_points.attr('id', 'new_points');
+        input_points.attr('type', 'text');
+        input_points.appendTo(input_li);
         var answer_button = $('<button>Přidej odpověď</button>');
         answer_button.attr('onclick', 'addAnswer(' + question_idx + ')');
         answer_button.appendTo(input_li);
