@@ -68,51 +68,13 @@
     {
       "question": "Finále 1",
       "answers": [
-        {
-          "answer": "faaa",
-          "points": 40
-        },
-        {
-          "answer": "fbbb",
-          "points": 30
-        },
-        {
-          "answer": "fccc",
-          "points": 20
-        },
-        {
-          "answer": "fddd",
-          "points": 10
-        },
-        {
-          "answer": "feee",
-          "points": 5
-        }
+        
       ]
     },
     {
       "question": "Finále 2",
       "answers": [
-        {
-          "answer": "f2aaa",
-          "points": 40
-        },
-        {
-          "answer": "f2bbb",
-          "points": 30
-        },
-        {
-          "answer": "f2ccc",
-          "points": 20
-        },
-        {
-          "answer": "f2ddd",
-          "points": 10
-        },
-        {
-          "answer": "f2eee",
-          "points": 5
-        }
+        
       ]
     }
   ]
