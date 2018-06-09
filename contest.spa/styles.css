@@ -115,6 +115,7 @@ body {
 }
 
 #strikes p {
+	display: block;
 	text-align: center;
 	font-size: 100pt;
 	color: #BE1622;
