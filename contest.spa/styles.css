@@ -6,6 +6,12 @@ body {
 	font-family: Helvetica, Arial, "sans-serif";
 }
 
+#game-window {
+	margin: 0 auto;
+	width: 1100px;
+	height: 900px;
+}
+
 #score {
 	background-color: #FFFFFF;
 	border-color: #1890D4;
@@ -13,7 +19,7 @@ body {
 	border-width: 1px;
 	margin: 0 auto;
 	margin-bottom: 50px;
-	width: 300px;
+	width: 340px;
 	padding: 20px;
 	border-radius: 25px;
 
@@ -28,7 +34,7 @@ body {
 	border-color: #1890D4;
 	border-style: solid;
 	border-width: 1px;
-	width: 1000px;
+	width: 1060px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 	padding: 20px;
@@ -39,7 +45,7 @@ body {
 
 #answers li {
 	background-color:  rgba(255,255,255,1);
-	width: 600px;
+	width: 500px;
 	height: 45px;
 	border-color: #1890D4;
 	border-style: solid;
@@ -53,6 +59,37 @@ body {
 	list-style-type: none;
 }
 
+#answers li:nth-child(1){
+	position: relative;
+	left: -300px;
+}
+
+#answers li:nth-child(2){
+	position: relative;
+	left: -300px;
+}
+
+#answers li:nth-child(3){
+	position: relative;
+	left: -300px;
+}
+
+#answers li:nth-child(4){
+	position: relative;
+	left: 260px;
+	top: -320px;
+}
+#answers li:nth-child(5){
+	position: relative;
+	left: 260px;
+	top: -320px;
+}
+#answers li:nth-child(6){
+	position: relative;
+	left: 260px;
+	top: -320px;
+}
+
 #answers li span {
 	padding-left: 25px;
 	margin-top: -4px;
@@ -64,8 +101,10 @@ body {
 
 #strikes {
 	margin: 0 auto;
-	margin-top: -85px;
+	position: relative;
+	top: -400px;
 	width: 400px;
+	height: 150px;
 	background-color: rgba(255,255,255,0.80);
 	border-radius: 15px;
 	
