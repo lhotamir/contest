@@ -1,6 +1,5 @@
 {
   "questions": [
-    /*Soutěž 1*/
 	 {
       "question": "K čemu se dá použít vosk?",
       "answers": [
@@ -130,8 +129,6 @@
         } 
       ]
     },
-	  
-	/*Soutěž 2*/
     {
       "question": "Co hoří?",
       "answers": [
@@ -260,9 +257,7 @@
           "points": 10
         }
       ]
-    },
-	
-	/*Soutěž 3*/  
+    }, 
     {
       "question": "Co může být rajské?",
       "answers": [
