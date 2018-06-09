@@ -1,68 +1,397 @@
 {
   "questions": [
-    {
-      "question": "Co to je?",
+    /*Soutěž 1*/
+	 {
+      "question": "K čemu se dá použít vosk?",
       "answers": [
         {
-          "answer": "aaa",
-          "points": 40
+          "answer": "k výrobě svíčky",
+          "points": 44
         },
         {
-          "answer": "bbb",
-          "points": 30
+          "answer": "k depilaci",
+          "points": 21
         },
         {
-          "answer": "ccc",
-          "points": 20
+          "answer": "na lyže, běžky",
+          "points": 12
         },
         {
-          "answer": "ddd",
-          "points": 10
+          "answer": "na voskování podlahy",
+          "points": 9
         },
         {
-          "answer": "eee",
-          "points": 5
+          "answer": "ke zdobení vajíček",
+          "points": 6
+        },
+		{
+          "answer": "k impregnaci",
+          "points": 2
         }
       ]
     },
     {
-      "question": "Co to není?",
+      "question": "Co uděláte jako první, když začne hořet?",
       "answers": [
         {
-          "answer": "aaa",
-          "points": 40
+          "answer": "zavolám hasiče",
+          "points": 23
         },
         {
-          "answer": "bbb",
-          "points": 30
+          "answer": "uteču",
+          "points": 19
         },
         {
-          "answer": "ccc",
-          "points": 20
+          "answer": "začnu hasit",
+          "points": 16
         },
         {
-          "answer": "ddd",
-          "points": 10
+          "answer": "křičet, řvát, ječet",
+          "points": 13
         },
         {
-          "answer": "eee",
+          "answer": "volat 'hoří'",
+          "points": 11
+        },
+        {
+          "answer": "zpanikařím",
           "points": 5
+        }  
+      ]
+    },
+    {
+      "question": "Co najdete v každé ledničce?",
+      "answers": [
+        {
+          "answer": "mléko",
+          "points": 21
+        },
+        {
+          "answer": "máslo",
+          "points": 17
+        },
+        {
+          "answer": "světlo (žárovku)",
+          "points": 15
+        },
+        {
+          "answer": "jídlo",
+          "points": 11
+        },
+        {
+          "answer": "vejce",
+          "points": 9
         }
       ]
     },
     {
-      "question": "Kdo to je?",
+      "question": "Jaký je nejčastější důvod, proč je žena nevrlá?",
       "answers": [
         {
-          "answer": "aaa",
+          "answer": "menstruace",
           "points": 40
         },
         {
-          "answer": "bbb",
-          "points": 30
+          "answer": "naštval ji muž",
+          "points": 18
+        },
+        {
+          "answer": "má hlad",
+          "points": 13
+        },
+        {
+          "answer": "je unavená",
+          "points": 5
+        },
+        {
+          "answer": "bolí ji hlava",
+          "points": 4
+        } 
+      ]
+    },
+    {
+      "question": "Kdybyste si kupovali psa, jaké plemeno byste si koupili?",
+      "answers": [
+        {
+          "answer": "labradora",
+          "points": 14
+        },
+        {
+          "answer": "zlatého retrívra",
+          "points": 13
+        },
+        {
+          "answer": "border kólii",
+          "points": 12
+        },
+        {
+          "answer": "jezevčíka",
+          "points": 6
+        } 
+      ]
+    },
+	  
+	/*Soutěž 2*/
+    {
+      "question": "Co hoří?",
+      "answers": [
+        {
+          "answer": "dřevo",
+          "points": 38
+        },
+        {
+          "answer": "hovno",
+          "points": 19
+        },
+        {
+          "answer": "oheň",
+          "points": 12
+        },
+        {
+          "answer": "papír",
+          "points": 11
+        },
+        {
+          "answer": "sirka",
+          "points": 3
+        },
+        {
+          "answer": "svíčka",
+          "points": 2
+        }  
+      ]
+    },
+    {
+      "question": "Co můžete mít na rameni?",
+      "answers": [
+        {
+          "answer": "papouška",
+          "points": 37
+        },
+        {
+          "answer": "kabelku",
+          "points": 12
+        },
+        {
+          "answer": "tetování",
+          "points": 8
+        },
+        {
+          "answer": "pihu",
+          "points": 5
+        },
+        {
+          "answer": "batoh",
+          "points": 4
+        },
+        {
+          "answer": "ptačí trus",
+          "points": 3
+        }  
+      ]
+    },
+	{
+      "question": "Co je oblíbeným jídlem obyčejného Japonce?",
+      "answers": [
+        {
+          "answer": "rýže",
+          "points": 48
+        },
+        {
+          "answer": "sushi",
+          "points": 26
+        },
+        {
+          "answer": "nudle",
+          "points": 13
+        },
+        {
+          "answer": "ryba",
+          "points": 5
+        },
+        {
+          "answer": "polévka rámen",
+          "points": 3
+        } 
+      ]
+    },
+    {
+      "question": "Jak se jmenuje nejznámější hit Karla Gotta?",
+      "answers": [
+        {
+          "answer": "Trezor",
+          "points": 38
+        },
+        {
+          "answer": "Lady Karneval",
+          "points": 20
+        },
+        {
+          "answer": "Včelka Mája",
+          "points": 14
+        },
+        {
+          "answer": "Být stále mlád",
+          "points": 11
+        },
+        {
+          "answer": "Kdepak, ty ptáčku, hnízdo máš",
+          "points": 9
         }
       ]
-    }
+    },
+    {
+      "question": "U kterého zvířete v Zoo, bude největší fronta?",
+      "answers": [
+        {
+          "answer": "u slonů",
+          "points": 21
+        },
+        {
+          "answer": "u lvů",
+          "points": 19
+        },
+        {
+          "answer": "u goril",
+          "points": 13
+        },
+        {
+          "answer": "u žiraf",
+          "points": 10
+        }
+      ]
+    },
+	
+	/*Soutěž 3*/  
+    {
+      "question": "Co může být rajské?",
+      "answers": [
+        {
+          "answer": "jablko",
+          "points": 44
+        },
+        {
+          "answer": "omáčka",
+          "points": 26
+        },
+        {
+          "answer": "zahrada",
+          "points": 14
+        },
+        {
+          "answer": "plyn",
+          "points": 6
+        },
+        {
+          "answer": "polévka",
+          "points": 5
+        },
+        {
+          "answer": "rajče",
+          "points": 3
+        }  
+      ]
+    },
+    {
+      "question": "S čím neživým si někteří lidé povídají?",
+      "answers": [
+        {
+          "answer": "s plyšákem",
+          "points": 20
+        },
+        {
+          "answer": "s telefonem, mobilem",
+          "points": 10
+        },
+        {
+          "answer": "s květinou",
+          "points": 9
+        },
+        {
+          "answer": "se zrcadlem",
+          "points": 7
+        },
+        {
+          "answer": "s duchy",
+          "points": 6
+        },
+        {
+          "answer": "s počítačem",
+          "points": 6
+        }  
+      ]
+    },
+    {
+      "question": "Kde všude může být oko?",
+      "answers": [
+        {
+          "answer": "na punčoše",
+          "points": 63
+        },
+        {
+          "answer": "na hlavě",
+          "points": 16
+        },
+        {
+          "answer": "na polévce",
+          "points": 9
+        },
+        {
+          "answer": "na obličeji",
+          "points": 6
+        },
+        {
+          "answer": "všude",
+          "points": 3
+        } 
+      ]
+    },
+    {
+      "question": "Koho byste označili za nejoblíbenějšího českého sportovce?",
+      "answers": [
+        {
+          "answer": "Jaromíra Jágra",
+          "points": 47
+        },
+        {
+          "answer": "Ester Ledeckou",
+          "points": 13
+        },
+        {
+          "answer": "Romana Šebrle",
+          "points": 8
+        },
+        {
+          "answer": "Petra Čecha",
+          "points": 7
+        },
+        {
+          "answer": "Petru Kvitovou",
+          "points": 5
+        }  
+      ]
+    },
+    {
+      "question": "Co byste přivezli známým jako suvenýr z Japonska?",
+      "answers": [
+        {
+          "answer": "hůlky",
+          "points": 20
+        },
+        {
+          "answer": "kimono",
+          "points": 10
+        },
+        {
+          "answer": "saké",
+          "points": 7
+        },
+        {
+          "answer": "vějíř",
+          "points": 7
+        } 
+      ]
+    }  
   ],
   "final_questions": [
     {
