@@ -105,8 +105,8 @@ body {
 }
 
 #strikes {
-	margin: 0 auto;
 	position: relative;
+	left: 350px;
 	top: -135px;
 	width: 400px;
 	height: 150px;
